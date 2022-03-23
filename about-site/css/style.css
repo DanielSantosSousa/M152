@@ -170,3 +170,24 @@ input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-
     border-style: outset;
 }
 
+#header {
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+}
+
+.link{
+    display:inline;
+    margin-left: 30px;
+    background-color: var(--blue);
+    height: 80px;
+    width: 10em;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    height: auto;
+}
