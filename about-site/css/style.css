@@ -198,3 +198,11 @@ input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-
     border-radius: 5%;
     font-size: 1.5em;
 }
+
+.concept h2{
+    font-size: 2em;
+}
+
+.concept h3{
+    font-size: 1.75em;
+}
