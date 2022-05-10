@@ -191,10 +191,3 @@ input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-
 .logo{
     height: auto;
 }
-
-.description{
-    background-color: white;
-    padding: 1em;
-    border-radius: 5%;
-    font-size: 1.5em;
-}
