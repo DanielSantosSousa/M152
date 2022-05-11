@@ -10,11 +10,12 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          local-dir: ./
+          local-dir: ./www
           exclude: |
             **/.github/**
             **.gitignore**
             **README.md**
+            **/.git/**
           server: danielsantos.bplaced.net
           username: danielsantos
           port: 21
