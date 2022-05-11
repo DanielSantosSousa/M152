@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Press+Start+2P');
+
+:root {
+    --black: #0D0A0B;
+    --grey-1: #2E2327;
+    --grey-2: #46353B;
+    --grey-3: #5D464E;
+    --grey-4: #745862;
+    --grey-5: #8C6975;
+    --grey-5: #B9A2AA;
+
+
+    --red: #F5322B;
+    --yellow: #FFC964;
+    --green: #ACB460;
+    --blue: #8BEEEA
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 75%;
+    font-family: 'Architects Daughter';
+}
+
+i {
+    font-size: 3em !important;
+    color: var(--grey-1);
+
+}
+
+main {
+    padding: 1em;
+    background-color: var(--red);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    font-family: 'Luckiest Guy';
+    margin: 0.5em;
+    color: var(--grey-1)
+}
+
+main h1 {
+    margin: 0;
+    font-size: 80px;
+}
+
+label.color {
+    text-align: center;
+    background-color: white;
+    border-width: 5px;
+    border-style: outset;
+    padding: 0.5em;
+}
+
+.cards-container-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex-basis: 30%;
+    flex-grow: 1;
+    background-color: white;
+    padding: 1em;
+    border-radius: 5%;
+}
+
+mark {
+    background-color: var(--yellow);
+}
+
+#header {
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    display: inline;
+    margin-left: 30px;
+    background-color: var(--blue);
+    height: 80px;
+    width: 10em;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: auto;
+}
+
+.description {
+    background-color: white;
+    padding: 1em;
+    border-radius: 5%;
+    font-size: 1.5em;
+}
+
+.concept h2 {
+    font-size: 2em;
+}
+
+.concept h3 {
+    font-size: 1.75em;
+}
+
+.earth-animation {
+    display: flex;
+    justify-content: center;
+}
+
+#plane {
+    height: 50px;
+    /*animation-name: earth;*/
+    position: relative;
+    top: 42.5%;
+    left: 75%;
+
+}
+
+#plane-orbit {
+    height: 300px;
+    width: 300px;
+    animation-name: earth;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#earth {
+    background-image: url("../assets/earth.png");
+    height: 300px;
+    width: 300px;
+}
+
+@keyframes earth {
+    from {
+        transform:  rotate(0deg);
+    }
+    to {
+        transform:  rotate(359deg);
+    }
+}
