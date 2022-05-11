@@ -16,7 +16,10 @@
     --red: #F5322B;
     --yellow: #FFC964;
     --green: #ACB460;
-    --blue: #8BEEEA
+    --blue: #8BEEEA;
+    --scroll-activated-story-delay: 0;
+    --rotate: 0deg;
+    --perspective: 0;
 }
 
 body {
@@ -147,9 +150,16 @@ mark {
 
 @keyframes earth {
     from {
-        transform:  rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        transform:  rotate(359deg);
+        transform: rotate(359deg);
     }
+}
+
+
+.scroll-activated-story img {
+    width: 100%;
+    background-color: #ff6600;
+    transform: rotate(var(--rotate)) skewY(var(--perspective));
 }

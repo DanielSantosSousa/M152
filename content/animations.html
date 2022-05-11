@@ -23,7 +23,28 @@
             </div>
         </div>
     </div>
+    <h2>Scroll Activated Story</h2>
+    <div class="scroll-activated-story card">
+        <img src="./assets/img1.jpg" alt="img1">
+        <img src="./assets/img2.jpg" alt="img1">
+        <img src="./assets/img3.jpg" alt="img1">
+    </div>
 </main>
 
 </body>
+<script>
+    const sasElement = document.getElementsByClassName("scroll-activated-story").item(0);
+    window.addEventListener("scroll", e => {
+        let t = window.scrollY - sasElement.getBoundingClientRect().x;
+        let scrollMaxY = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight));
+        let rotate = Math.round(30 / scrollMaxY * t);
+        let perspective = Math.round(20 / scrollMaxY * t);
+        console.log(sasElement.getBoundingClientRect());
+        document.documentElement.style.setProperty('--rotate', (rotate > 0 ? rotate : 0)+ 'deg');
+        document.documentElement.style.setProperty('--perspective', (perspective > 0 ? perspective : 0) + 'deg');
+        console.log(document.documentElement.style.getPropertyValue('--perspective'));
+    });
+
+
+</script>
 </html>
