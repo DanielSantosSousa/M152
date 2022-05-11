@@ -10,7 +10,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          local-dir: ./www
+          local-dir: ./www/
           exclude: |
             **/.github/**
             **.gitignore**
