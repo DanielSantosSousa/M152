@@ -20,6 +20,7 @@
     --scroll-activated-story-delay: 0;
     --rotate: 0deg;
     --perspective: 0;
+    --slidein: 0;
 }
 
 body {
@@ -160,5 +161,17 @@ mark {
 .scroll-activated-story img {
     width: 100%;
     background-color: #ff6600;
-    transform: rotate(var(--rotate)) skewY(var(--perspective));
+    /*transform: rotate(var(--rotate)) skewY(var(--perspective)) translateX(var(--slidein));*/
+}
+
+#img1 {
+    transform: rotate(var(--rotate));
+}
+
+#img2 {
+    transform: skewY(var(--perspective));
+}
+
+#img3 {
+    transform: translateX(var(--slidein));
 }

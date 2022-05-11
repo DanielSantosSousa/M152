@@ -25,9 +25,9 @@
     </div>
     <h2>Scroll Activated Story</h2>
     <div class="scroll-activated-story card">
-        <img src="./assets/img1.jpg" alt="img1">
-        <img src="./assets/img2.jpg" alt="img1">
-        <img src="./assets/img3.jpg" alt="img1">
+        <img src="./assets/img1.jpg" alt="img1" id="img1">
+        <img src="./assets/img2.jpg" alt="img1" id="img2">
+        <img src="./assets/img3.jpg" alt="img1" id="img3">
     </div>
 </main>
 
@@ -39,10 +39,12 @@
         let scrollMaxY = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight));
         let rotate = Math.round(30 / scrollMaxY * t);
         let perspective = Math.round(20 / scrollMaxY * t);
+        let slideIn = window.innerWidth / 4 - Math.round((window.innerWidth / 4) / scrollMaxY * t);
         console.log(sasElement.getBoundingClientRect());
-        document.documentElement.style.setProperty('--rotate', (rotate > 0 ? rotate : 0)+ 'deg');
+        document.documentElement.style.setProperty('--rotate', (rotate > 0 ? rotate : 0) + 'deg');
         document.documentElement.style.setProperty('--perspective', (perspective > 0 ? perspective : 0) + 'deg');
-        console.log(document.documentElement.style.getPropertyValue('--perspective'));
+        document.documentElement.style.setProperty('--slidein', (slideIn > 0 ? slideIn : 0) + 'px');
+        console.log(document.documentElement.style.getPropertyValue('--slidein'));
     });
 
 
