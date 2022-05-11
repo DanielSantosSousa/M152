@@ -8,7 +8,7 @@
 <body>
 <header>
     <div id="header">
-        <a href="../index.html"><img class="logo" src="../gallery/logo.png"></a>
+        <a href="../index.html"><img alt="logo" class="logo" src="../gallery/logo.png"></a>
         <a href="../index.html" class="link"> About Site (TODO) </a>
         <a href="../index.html" class="link"> About (TODO) </a>
     </div>
@@ -34,7 +34,7 @@
 </body>
 <script>
     const sasElement = document.getElementsByClassName("scroll-activated-story").item(0);
-    window.addEventListener("scroll", e => {
+    window.addEventListener("scroll", () => {
         let t = window.scrollY - sasElement.getBoundingClientRect().x;
         let scrollMaxY = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight));
         let rotate = Math.round(30 / scrollMaxY * t);
