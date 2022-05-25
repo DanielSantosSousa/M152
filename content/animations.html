@@ -29,22 +29,62 @@
         <img src="./assets/img2.jpg" alt="img1" id="img2">
         <img src="./assets/img3.jpg" alt="img1" id="img3">
     </div>
+    <h2>svg</h2>
+    <div class="card svg-animation">
+        <svg width="300" height="300">
+            <defs>
+                <path id="heart" d="M100,100 C10,0 0,150 100,200 C200,150 190,0 100,100"></path>
+                <mask id="outsideHeartOnly">
+                    <rect x="0" y="0" width="300" height="300" fill="white"/>
+                    <use xlink:href="#heart" fill="black"/>
+                </mask>
+            </defs>
+            <use
+                    xlink:href="#heart"
+                    stroke-width="20" stroke="red" fill="pink"
+                    mask="url(#outsideHeartOnly)">
+                <animate id="anim1" begin="0s; anim2.end" attributeName="stroke-width" values="1; 30; 1;" dur="2s"
+                         repeatCount="indefinite"></animate>
+            </use>
+            <use
+                    xlink:href="#heart"
+                    fill="pink"/>
+        </svg>
+    </div>
 </main>
 
 </body>
 <script>
     const sasElement = document.getElementsByClassName("scroll-activated-story").item(0);
+
+    const topInView = e => e.getBoundingClientRect().top < window.innerHeight;
+    const bottomInView = e => e.getBoundingClientRect().bottom < window.innerHeight;
+
     window.addEventListener("scroll", () => {
         let t = window.scrollY - sasElement.getBoundingClientRect().x;
         let scrollMaxY = (window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight));
         let rotate = Math.round(30 / scrollMaxY * t);
         let perspective = Math.round(20 / scrollMaxY * t);
         let slideIn = window.innerWidth / 4 - Math.round((window.innerWidth / 4) / scrollMaxY * t);
-        console.log(sasElement.getBoundingClientRect());
+
+        let perc1 = -1 * (sasElement.getBoundingClientRect().top - window.innerHeight);
+        let a = e => e.getBoundingClientRect().height < (e.getBoundingClientRect().top - window.innerHeight);
+
+        let percent = e => -1 * (1 / e.getBoundingClientRect().height) * e.getBoundingClientRect().top;
+        let is = e => e.getBoundingClientRect().height > perc1 ? percent(e) : 1;
+        console.log(is(sasElement));
+        /*console.log('height' + sasElement.getBoundingClientRect().height);
+        console.log('top' + sasElement.getBoundingClientRect().top);
+        console.log(percent(sasElement));*/
+
         document.documentElement.style.setProperty('--rotate', (rotate > 0 ? rotate : 0) + 'deg');
         document.documentElement.style.setProperty('--perspective', (perspective > 0 ? perspective : 0) + 'deg');
         document.documentElement.style.setProperty('--slidein', (slideIn > 0 ? slideIn : 0) + 'px');
-        console.log(document.documentElement.style.getPropertyValue('--slidein'));
+        /*console.log('top ' + topInView(sasElement));
+        console.log('bottom ' + bottomInView(sasElement));
+        console.log('top value ' + -1*(sasElement.getBoundingClientRect().top - window.innerHeight));
+        console.log('bottom value ' + (sasElement.getBoundingClientRect().bottom - window.innerHeight));
+*/
     });
 
 

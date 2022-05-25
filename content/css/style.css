@@ -165,13 +165,18 @@ mark {
 }
 
 #img1 {
-    transform: rotate(var(--rotate));
+    transform: translateX(var(--slidein));
 }
 
 #img2 {
-    transform: skewY(var(--perspective));
+    transform: translateX(var(--slidein));
 }
 
 #img3 {
     transform: translateX(var(--slidein));
+}
+
+.svg-animation {
+    display: flex;
+    justify-content: center;
 }
