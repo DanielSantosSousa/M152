@@ -31,6 +31,13 @@ body {
     }
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--blue);
+}
+
 i {
     font-size: 3em !important;
     color: var(--grey-1);
