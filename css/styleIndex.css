@@ -25,6 +25,18 @@ body {
     width: 75%;
     font-family: 'Architects Daughter';
 }
+@media screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--blue);
+}
 
 i {
     font-size: 3em !important;
@@ -34,6 +46,21 @@ i {
 
 input:not([type=color]) {
     font-size: 1.5em;
+}
+
+.cards-container-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex-basis: 30%;
+    flex-grow: 1;
+    background-color: white;
+    padding: 1em;
+    border-radius: 5%;
 }
 
 main {
@@ -188,11 +215,24 @@ input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-
     justify-content: center;
 }
 
-.links{
-    background-color: white;
-    font-size: 2em
-}
-
 .logo{
     height: auto;
+}
+
+.description{
+    background-color: white;
+    padding: 1em;
+    border-radius: 5%;
+    font-size: 1.5em;
+}
+
+.concept h2{
+    font-size: 2em;
+}
+
+.concept h3{
+    font-size: 1.75em;
+}
+img{
+    max-width: 90%;
 }

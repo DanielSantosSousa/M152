@@ -25,6 +25,18 @@ body {
     width: 75%;
     font-family: 'Architects Daughter';
 }
+@media screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--blue);
+}
 
 i {
     font-size: 3em !important;
