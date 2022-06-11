@@ -92,6 +92,7 @@ label.color {
     border-radius: 5%;
 }
 
+
 mark {
     background-color: var(--yellow);
 }
@@ -208,4 +209,9 @@ input[type=button]:active, input[type=button]:focus {
 .svg-animation {
     display: flex;
     justify-content: center;
+}
+
+
+.img-full-width {
+    width: 100%;
 }
