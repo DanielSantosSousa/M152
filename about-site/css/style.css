@@ -25,6 +25,11 @@ body {
     width: 75%;
     font-family: 'Architects Daughter';
 }
+@media screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}
 
 i {
     font-size: 3em !important;

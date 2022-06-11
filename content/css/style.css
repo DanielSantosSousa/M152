@@ -30,6 +30,12 @@ body {
     font-family: 'Architects Daughter', serif;
 }
 
+@media screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}
+
 i {
     font-size: 3em !important;
     color: var(--grey-1);
@@ -42,6 +48,13 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--blue);
 }
 
 h1, h2, h3,
