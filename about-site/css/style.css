@@ -206,3 +206,6 @@ input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-
 .concept h3{
     font-size: 1.75em;
 }
+img{
+  max-width: 90%;
+}
