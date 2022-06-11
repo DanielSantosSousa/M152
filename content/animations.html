@@ -21,11 +21,23 @@
             </div>
         </div>
     </div>
+    <div class="card">
+        <p>Für die Erde Animation würden CSS3 Animationen benutzt.</p>
+    </div>
     <h2>Scroll Activated Story</h2>
     <div class="scroll-activated-story card">
         <img src="./assets/img1.jpg" alt="img1" id="img1">
         <img src="./assets/img2.jpg" alt="img1" id="img2">
         <img src="./assets/img3.jpg" alt="img1" id="img3">
+    </div>
+    <div class="card">
+        <p>Für die Scroll Animationen würde HTML mit CSS und JavaScript verwendet. Aktuell gibt es keine einfache
+            Möglichkeit, Scroll aktivierte Animationen im Webseiten zu erstellen, jedoch zukünftlich soll es denn
+            <mark>@scroll-timeline</mark>
+            geben
+        </p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@scroll-timeline">Link zur @scroll-timeline in
+            mozilla Docs</a>
     </div>
     <h2>svg</h2>
     <div class="card svg-animation">
@@ -49,14 +61,31 @@
                     fill="pink"/>
         </svg>
     </div>
+    <div class="card">
+        <p>Für den Herz wurden SVG's quadratische Kurve Funktionen benutzt. Die Quadratische Kurven ermöglichen es,
+            runde und komplexere Objekte zu zeichnen.
+            SVGs sind eine Vektor-basierte alternative zur Raster-Grafiken. Vektor Grafiken können beliebig viel
+            vergrössert werden, ohne dass sie an Qualität verlieren.
+            Heutzutage werden meiste SVG Grafiken in grafischen Programmen, wie Krita oder Adobe, gezeichnet.</p>
+    </div>
+    <h2>HTML Canvas</h2>
+    <div class="card svg-animation">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="card">
+        <p>Das HTML Canvas ist eine weitere Alternative zur Grafiken, die an Implementation und Benutzung viel näher an
+            HTML, JS und CSS ist, als z.Bs. SVG. Canvas wird oft für Sachen wie Web-basierte Spiele, Zeichnungsprogramme
+            innerhalb von Web-Browser, Animationen oder Grafiken verwendet.
+        </p>
+        <p>Die JavaScript Library <a href="http://fabricjs.com/">FabricJS</a> ist ein Beispiel, wozu Canvas gebraucht
+            werden kann.
+        </p>
+    </div>
 </main>
 
-</body>
 <script>
     const sasElement = document.getElementsByClassName("scroll-activated-story").item(0);
 
-    const topInView = e => e.getBoundingClientRect().top < window.innerHeight;
-    const bottomInView = e => e.getBoundingClientRect().bottom < window.innerHeight;
 
     window.addEventListener("scroll", () => {
         let t = window.scrollY - sasElement.getBoundingClientRect().x;
@@ -66,25 +95,21 @@
         let slideIn = window.innerWidth / 4 - Math.round((window.innerWidth / 4) / scrollMaxY * t);
 
         let perc1 = -1 * (sasElement.getBoundingClientRect().top - window.innerHeight);
-        let a = e => e.getBoundingClientRect().height < (e.getBoundingClientRect().top - window.innerHeight);
 
         let percent = e => -1 * (1 / e.getBoundingClientRect().height) * e.getBoundingClientRect().top;
         let is = e => e.getBoundingClientRect().height > perc1 ? percent(e) : 1;
         console.log(is(sasElement));
-        /*console.log('height' + sasElement.getBoundingClientRect().height);
-        console.log('top' + sasElement.getBoundingClientRect().top);
-        console.log(percent(sasElement));*/
 
         document.documentElement.style.setProperty('--rotate', (rotate > 0 ? rotate : 0) + 'deg');
         document.documentElement.style.setProperty('--perspective', (perspective > 0 ? perspective : 0) + 'deg');
         document.documentElement.style.setProperty('--slidein', (slideIn > 0 ? slideIn : 0) + 'px');
-        /*console.log('top ' + topInView(sasElement));
-        console.log('bottom ' + bottomInView(sasElement));
-        console.log('top value ' + -1*(sasElement.getBoundingClientRect().top - window.innerHeight));
-        console.log('bottom value ' + (sasElement.getBoundingClientRect().bottom - window.innerHeight));
-*/
     });
 
-
+    const canvasElement = document.getElementById("canvas");
+    const canvas = canvasElement.getContext("2d");
+    canvas.beginPath();
+    canvas.arc(100, 100, 40, 0, 2 * Math.PI);
+    canvas.stroke();
 </script>
+</body>
 </html>

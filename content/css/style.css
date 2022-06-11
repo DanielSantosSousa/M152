@@ -142,6 +142,22 @@ mark {
     animation-iteration-count: infinite;
 }
 
+input[type=text], input[type=button], input[type=checkbox] {
+    border-width: 5px;
+    border-style: outset;
+    font-family: "Press Start 2P"
+}
+
+input[type=text]:focus {
+    box-shadow: 0 0 10px var(--yellow);
+    outline: 5px solid var(--yellow);
+}
+
+input[type=button]:active, input[type=button]:focus {
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgifimage.net%2Fwp-content%2Fuploads%2F2017%2F06%2Fexplosion-gif-transparent-12.gif&f=1&nofb=1");
+    background-size: cover;
+}
+
 #earth {
     background-image: url("../assets/earth.png");
     height: 300px;
